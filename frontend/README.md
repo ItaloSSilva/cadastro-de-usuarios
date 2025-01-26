@@ -1,8 +1,35 @@
-# React + Vite
+O backend é construído com Node.js, Express e Prisma.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Instalação
 
-Currently, two official plugins are available:
+1. Navegue até o diretório `backend`:
+    ```sh
+    cd backend
+    ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Instale as dependências:
+    ```sh
+    npm install
+    ```
+
+3. Configure o banco de dados no arquivo `.env`:
+    ```
+    DATABASE_URL="sua_url_do_banco_de_dados"
+    ```
+
+4. Execute as migrações do Prisma:
+    ```sh
+    npx prisma migrate dev
+    ```
+
+5. Inicie o servidor:
+    ```sh
+    node server.js
+    ```
+
+### Endpoints
+
+- `POST /users`: Cria um novo usuário.
+- `GET /users`: Retorna todos os usuários ou filtra por nome, email ou idade.
+- `PUT /users/:id`: Atualiza um usuário existente.
+- `DELETE /users/:id`: Deleta um usuário.
